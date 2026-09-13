@@ -1,8 +1,20 @@
 # Welcome to the YAML Knowledge Bundle
 
-YAML is a lightweight, human-readable data-serialization language designed to be easy for humans to read while still supporting advanced features. YAML stands for "YAML Ain't Markup Language" and is commonly used for configuration, data exchange, and CI/CD pipelines.
+## Description
 
-This bundle is written for beginners. Read the pages below in the sequence listed to get a smooth, practical introduction to YAML.
+YAML is a light-weight, human-readable data-serialization language. It is primarily designed to make the format easy to read while including advanced features.
+
+YAML stands for "YAML Ain't Markup Language".
+
+It is similar to XML and JSON files but uses a more minimalist syntax even while maintaining similar capabilities.
+
+YAML files are created with extensions `.yaml` or `.yml`. You can use any IDE or text editor to open/create YAML files.
+
+YAML is similar inline style to JSON (it is a superset of JSON).
+
+While going through the journey of learning YAML, the following pages were documented along the way as a personal reference. Hopefully this list enriches your own understanding too :)
+
+Read the following pages in sequence — it will probably help you learn better, the same way it did for the author.
 
 Quick intro
 
