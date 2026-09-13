@@ -5,7 +5,7 @@ description: "Why YAML emerged and how it differs from XML and JSON"
 generated: { by: human:bhagatabhijeet, at: 2026-09-13T04:58:00Z }
 ---
 
-# YAML — Evolution
+# 2. YAML — Evolution
 
 Let's see why YAML is different from XML and JSON, and why YAML has become so popular for configuration and human-edited files.
 
@@ -78,3 +78,7 @@ Tips for beginners
 - Use spaces (not tabs) for indentation — most errors come from mixed tabs and spaces.
 - Keep examples short and well-commented when learning.
 - Use a YAML-aware editor (VS Code with the Red Hat YAML extension) to get helpful linting and schema support.
+
+---
+
+[← Previous: XML vs JSON vs YAML](01-xml-vs-json-vs-yaml.md) · [🏠 Home](../index.md) · [Next: Creating a Simple YAML →](03-creating-simple-yaml-vscode.md)

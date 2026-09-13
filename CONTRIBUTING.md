@@ -13,9 +13,10 @@ Thank you for helping make this bundle friendly for beginners. Please follow the
    - Example YAML files and code: assets/code/*
 
 3. Images
-   - Use descriptive file names (e.g., yaml-anchors-diagram.png).
-   - Include alt text when referencing images in markdown: ![alt text](assets/images/image.png)
-   - Prefer PNG or SVG for diagrams; keep screenshots at reasonable resolution.
+   - Use descriptive file names (e.g., yaml-anchors-diagram.svg).
+   - Include alt text when referencing images in markdown.
+   - Path matters: files in `content/*.md` must link images as `../assets/images/...` (one level up), not `assets/images/...` — otherwise the image 404s on GitHub. Files at the repo root (like `README.md`) use `assets/images/...` directly.
+   - Prefer SVG for diagrams; keep screenshots at reasonable resolution.
 
 4. Code samples
    - Keep runnable examples small (<= 100 lines when possible).
@@ -34,4 +35,4 @@ Thank you for helping make this bundle friendly for beginners. Please follow the
    - Add alt text for all images.
    - Ensure code examples use a monospaced font (GitHub will render code blocks correctly).
 
-Thanks — once you provide the actual lesson content or images, I'll add them into the bundle and polish the wording for beginners.
+Thanks for helping keep this bundle friendly, accurate, and fast to read!

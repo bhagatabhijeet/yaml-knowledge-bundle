@@ -4,7 +4,7 @@ title: "XML vs JSON vs YAML"
 description: "Quick comparison and short examples for beginners"
 ---
 
-# XML vs JSON vs YAML
+# 1. XML vs JSON vs YAML
 
 By Abhijeet Bhagat • 2 min read
 
@@ -95,3 +95,7 @@ colors:
   - blue
 primary: red
 ```
+
+---
+
+[🏠 Home](../index.md) · [Next: YAML — Evolution →](02-yaml-evolution.md)

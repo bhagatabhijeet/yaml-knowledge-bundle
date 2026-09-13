@@ -5,7 +5,7 @@ description: "Comments, scalars, strings, typing, timestamps, sequences, and dic
 generated: { by: human:bhagatabhijeet, at: 2026-09-13T04:58:00Z }
 ---
 
-# YAML Basic Concepts
+# 4. YAML Basic Concepts
 
 ![YAML structure](../assets/images/yaml-structure.svg)
 
@@ -245,3 +245,7 @@ todo:
     - shopping
     - errands
 ```
+
+---
+
+[← Previous: Creating a Simple YAML](03-creating-simple-yaml-vscode.md) · [🏠 Home](../index.md) · [Next: YAML Advance Concepts →](05-advance-concepts.md)

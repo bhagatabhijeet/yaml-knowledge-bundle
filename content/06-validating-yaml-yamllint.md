@@ -5,7 +5,7 @@ description: "Install and use yamllint to catch common YAML issues"
 generated: { by: human:bhagatabhijeet, at: 2026-09-13T04:58:00Z }
 ---
 
-# Validating YAML using yamllint
+# 6. Validating YAML using yamllint
 
 ![Write, lint, fix, ship](../assets/images/yaml-lint-flow.svg)
 
@@ -41,3 +41,7 @@ yamllint .
 ```
 
 That's it — you now know enough YAML to read, write, and validate real-world config files. 🎉
+
+---
+
+[← Previous: YAML Advance Concepts](05-advance-concepts.md) · [🏠 Home](../index.md)

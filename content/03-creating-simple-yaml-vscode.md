@@ -5,7 +5,7 @@ description: "How to create and edit a YAML file in VS Code and example"
 generated: { by: human:bhagatabhijeet, at: 2026-09-13T04:58:00Z }
 ---
 
-# Creating a simple YAML — Using VS Code
+# 3. Creating a Simple YAML — Using VS Code
 
 ![Four steps to your first YAML file](../assets/images/yaml-vscode-setup.svg)
 
@@ -61,4 +61,6 @@ Exercise
 
 - Open VS Code, create `assets/code/examplecorp.yml`, paste the example above, save, and observe how the YAML extension gives syntax help. Try changing values and adding a comment using `#`.
 
-Next up: learn how to check your YAML for mistakes automatically in [Validating YAML using yamllint](06-validating-yaml-yamllint.md).
+---
+
+[← Previous: YAML — Evolution](02-yaml-evolution.md) · [🏠 Home](../index.md) · [Next: YAML Basic Concepts →](04-basic-concepts.md)
