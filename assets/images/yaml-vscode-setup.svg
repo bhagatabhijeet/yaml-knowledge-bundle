@@ -1,7 +1,8 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1000" height="230" viewBox="0 0 1000 230">
   <defs>
     <linearGradient id="setupAccent" x1="0" y1="0" x2="1" y2="0">
-      <stop offset="0%" stop-color="#6a5cff"/>
+      <stop offset="0%" stop-color="#ff8a5c"/>
+      <stop offset="50%" stop-color="#6a5cff"/>
       <stop offset="100%" stop-color="#2fb8a6"/>
     </linearGradient>
     <marker id="arrow2" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
@@ -10,6 +11,7 @@
   </defs>
 
   <rect width="1000" height="230" fill="#ffffff" stroke="#e3e6ea" rx="14"/>
+  <rect x="0" y="0" width="1000" height="8" fill="url(#setupAccent)" rx="4"/>
   <text x="40" y="40" font-size="20" font-weight="bold" font-family="Arial" fill="#1a1a2e">Your first YAML file, in 4 steps</text>
 
   <!-- 4 step cards -->

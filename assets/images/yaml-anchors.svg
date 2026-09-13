@@ -2,7 +2,8 @@
   <defs>
     <linearGradient id="anchorAccent" x1="0" y1="0" x2="0" y2="1">
       <stop offset="0%" stop-color="#ff8a5c"/>
-      <stop offset="100%" stop-color="#6a5cff"/>
+      <stop offset="50%" stop-color="#6a5cff"/>
+      <stop offset="100%" stop-color="#2fb8a6"/>
     </linearGradient>
     <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
       <path d="M0,0 L10,5 L0,10 z" fill="#6a5cff"/>
