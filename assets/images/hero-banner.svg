@@ -1,50 +1,62 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="300" viewBox="0 0 1200 300">
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="480" viewBox="0 0 1200 480">
   <defs>
-    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0%" stop-color="#6a5cff"/>
-      <stop offset="100%" stop-color="#2fb8a6"/>
+    <linearGradient id="coverBg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#1a1440"/>
+      <stop offset="55%" stop-color="#241a5e"/>
+      <stop offset="100%" stop-color="#123d40"/>
     </linearGradient>
+    <linearGradient id="coverAccent" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#ff8a5c"/>
+      <stop offset="50%" stop-color="#8b7bff"/>
+      <stop offset="100%" stop-color="#2fe0c9"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="50%" cy="0%" r="75%">
+      <stop offset="0%" stop-color="#8b7bff" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#8b7bff" stop-opacity="0"/>
+    </radialGradient>
   </defs>
 
-  <rect width="1200" height="300" fill="#ffffff" stroke="#e3e6ea" rx="14"/>
-  <rect x="0" y="0" width="10" height="300" fill="url(#accent)" rx="6"/>
+  <!-- cover background -->
+  <rect width="1200" height="480" fill="url(#coverBg)" rx="18"/>
+  <rect width="1200" height="480" fill="url(#glow)" rx="18"/>
+  <rect x="0" y="0" width="1200" height="10" fill="url(#coverAccent)" rx="5"/>
 
-  <!-- Left: headline -->
-  <g font-family="Arial, Helvetica, sans-serif">
-    <text x="50" y="95" font-size="44" font-weight="bold" fill="#1a1a2e">YAML in Minutes <tspan font-size="34">⚡</tspan></text>
-    <text x="50" y="130" font-size="18" fill="#4a4f5a">Not hours of tutorials. 6 short lessons, real examples, ~11 minutes total.</text>
-
-    <!-- badges -->
-    <g font-size="13" fill="#ffffff">
-      <rect x="50" y="155" width="88" height="28" rx="14" fill="#6a5cff"/>
-      <text x="64" y="173">6 lessons</text>
-
-      <rect x="148" y="155" width="96" height="28" rx="14" fill="#2fb8a6"/>
-      <text x="162" y="173">~11 minutes</text>
-
-      <rect x="254" y="155" width="130" height="28" rx="14" fill="#ff8a5c"/>
-      <text x="268" y="173">runnable examples</text>
-    </g>
-
-    <text x="50" y="220" font-size="14" fill="#7a7f89">Kubernetes • GitHub Actions • Ansible • Docker Compose • CI pipelines</text>
+  <!-- faint decorative yaml snippet, background texture -->
+  <g font-family="Consolas, Menlo, monospace" font-size="20" fill="#ffffff" opacity="0.06">
+    <text x="60" y="120">book:</text>
+    <text x="100" y="150">title: YAML Knowledge Bundle</text>
+    <text x="100" y="180">level: beginner</text>
+    <text x="100" y="210">chapters: 6</text>
+    <text x="100" y="240">format: [xml, json, yaml]</text>
+    <text x="60" y="270">reads_in: "~11 minutes"</text>
   </g>
 
-  <!-- Right: JSON -> YAML mini comparison -->
-  <g font-family="Consolas, Menlo, monospace" font-size="13">
-    <rect x="740" y="55" width="190" height="130" rx="8" fill="#f6f8fa" stroke="#d7dbe0"/>
-    <text x="756" y="75" fill="#9aa0a8">JSON</text>
-    <text x="756" y="98" fill="#333">{"person": {</text>
-    <text x="770" y="118" fill="#333">"name": "Alice",</text>
-    <text x="770" y="138" fill="#333">"age": 30</text>
-    <text x="756" y="158" fill="#333">}}</text>
-
-    <text x="950" y="120" font-family="Arial" font-size="26" fill="#6a5cff">→</text>
-
-    <rect x="990" y="55" width="170" height="130" rx="8" fill="#f1fbf9" stroke="#bfe9e1"/>
-    <text x="1006" y="75" fill="#2fb8a6" font-family="Arial">YAML</text>
-    <text x="1006" y="98" fill="#1a1a2e">person:</text>
-    <text x="1018" y="118" fill="#1a1a2e">name: Alice</text>
-    <text x="1018" y="138" fill="#1a1a2e">age: 30</text>
+  <!-- corner ribbon -->
+  <g font-family="Arial" font-weight="bold">
+    <rect x="920" y="36" width="230" height="34" rx="17" fill="#ffffff" fill-opacity="0.12" stroke="#ffffff" stroke-opacity="0.25"/>
+    <text x="945" y="58" font-size="14" fill="#ffe9de" letter-spacing="1">BEGINNER FRIENDLY</text>
   </g>
-  <text x="990" y="205" font-family="Arial" font-size="13" fill="#7a7f89">same data, way less noise</text>
+
+  <!-- main title block, centered -->
+  <g font-family="Arial, Helvetica, sans-serif" text-anchor="middle">
+    <text x="600" y="210" font-size="30" fill="#c9c3ff" letter-spacing="6" font-weight="600">THE YAML KNOWLEDGE BUNDLE</text>
+
+    <text x="600" y="300" font-size="88" font-weight="bold" fill="#ffffff">YAML in Minutes</text>
+
+    <rect x="470" y="322" width="260" height="6" rx="3" fill="url(#coverAccent)"/>
+
+    <text x="600" y="365" font-size="20" fill="#d9d6f5">Not hours of tutorials. Six short lessons, real examples.</text>
+  </g>
+
+  <!-- stat pills -->
+  <g font-family="Arial" font-size="15" font-weight="bold" text-anchor="middle">
+    <rect x="355" y="400" width="130" height="40" rx="20" fill="#ffffff" fill-opacity="0.12" stroke="#ffffff" stroke-opacity="0.3"/>
+    <text x="420" y="425" fill="#ffffff">6 lessons</text>
+
+    <rect x="505" y="400" width="150" height="40" rx="20" fill="#ffffff" fill-opacity="0.12" stroke="#ffffff" stroke-opacity="0.3"/>
+    <text x="580" y="425" fill="#ffffff">~11 minutes</text>
+
+    <rect x="675" y="400" width="170" height="40" rx="20" fill="#ffffff" fill-opacity="0.12" stroke="#ffffff" stroke-opacity="0.3"/>
+    <text x="760" y="425" fill="#ffffff">beginner-first</text>
+  </g>
 </svg>
