@@ -5,7 +5,7 @@ description: "Complex keys, anchors, aliases, overriding, tags, and multi-docume
 generated: { by: human:bhagatabhijeet, at: 2026-09-13T04:58:00Z }
 ---
 
-# YAML Advanced Concepts (for curious beginners)
+# 5. YAML Advanced Concepts (for curious beginners)
 
 These are the features you'll bump into once you start *reading* other people's YAML — a Kubernetes manifest, a CI pipeline, a shared config file — rather than things you need to memorize to write your own. Skim through once so none of it looks alien later; you can always come back and copy an example when you actually need it.
 
@@ -85,14 +85,16 @@ ExampleCorpLocations:
 
 employees:
   - employee:
-    name: Alice
+    name: Alice                 # indented same as "employee:" above -> NOT nested inside it
     canreportto: *uslocations
   - employee:
-     name: Bob
+     name: Bob                  # indented one space deeper -> correctly nested inside "employee"
      canreportto: *canlocations
 ```
 
 Note the use of `&` and `*` to define and reuse the location lists — `*uslocations` simply expands to the full list defined above, wherever it's referenced.
+
+Look closely at the indentation under each `employee:` — that's not a typo, it's deliberate. Alice's `name` and `canreportto` line up with `employee:` itself, so they become siblings of `employee` instead of children of it, and `employee` ends up empty (`null`) in the JSON below. Bob's are indented one extra space, so they correctly nest inside `employee`. Same code shape, one space of difference, two very different results — which is exactly why the JSON output right after this looks asymmetric.
 
 The corresponding JSON:
 
@@ -162,7 +164,7 @@ The corresponding JSON:
 }
 ```
 
-> Indentation pitfall: look closely at the two `employee:` entries in the YAML above. For Alice, `name` and `canreportto` are indented to the *same* level as `employee:` itself, so they end up as siblings of `employee` (which becomes `null`) rather than nested inside it. For Bob, they're indented one extra space, so they correctly nest inside `employee`. The JSON output shows exactly this difference — a good real-world reminder of why consistent indentation matters in YAML.
+> **Takeaway:** in YAML, indentation *is* the structure — there's no closing brace to save you if a line is one space off. When something parses "wrong," check indentation first.
 
 ## Overriding in YAML
 
@@ -234,3 +236,7 @@ doc: second
 Use an anchor to avoid repeating the same database connection settings for two services.
 
 Hint (short): define `db: &db` and reference `*db` in both service definitions.
+
+---
+
+[← Previous: YAML Basic Concepts](04-basic-concepts.md) · [🏠 Home](../index.md) · [Next: Validating YAML with yamllint →](06-validating-yaml-yamllint.md)
