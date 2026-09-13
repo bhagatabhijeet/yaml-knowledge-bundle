@@ -7,6 +7,8 @@ generated: { by: human:bhagatabhijeet, at: 2026-09-13T04:58:00Z }
 
 # Creating a simple YAML — Using VS Code
 
+![Four steps to your first YAML file](../assets/images/yaml-vscode-setup.svg)
+
 Step-by-step: make your first YAML file
 
 1. Install Visual Studio Code (VS Code) from https://code.visualstudio.com/ if you don't have it.

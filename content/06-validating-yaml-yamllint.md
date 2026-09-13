@@ -7,6 +7,8 @@ generated: { by: human:bhagatabhijeet, at: 2026-09-13T04:58:00Z }
 
 # Validating YAML using yamllint
 
+![Write, lint, fix, ship](../assets/images/yaml-lint-flow.svg)
+
 Why validate?
 
 - Small mistakes (tabs, trailing spaces, bad indentation) can break YAML parsers.

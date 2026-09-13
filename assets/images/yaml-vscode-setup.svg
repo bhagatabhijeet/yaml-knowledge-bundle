@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="230" viewBox="0 0 1000 230">
+  <defs>
+    <linearGradient id="setupAccent" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#6a5cff"/>
+      <stop offset="100%" stop-color="#2fb8a6"/>
+    </linearGradient>
+    <marker id="arrow2" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#c7cbd4"/>
+    </marker>
+  </defs>
+
+  <rect width="1000" height="230" fill="#ffffff" stroke="#e3e6ea" rx="14"/>
+  <text x="40" y="40" font-size="20" font-weight="bold" font-family="Arial" fill="#1a1a2e">Your first YAML file, in 4 steps</text>
+
+  <!-- 4 step cards -->
+  <g font-family="Arial">
+    <!-- step 1 -->
+    <rect x="40" y="66" width="200" height="130" fill="#f6f8fa" stroke="#e1e4e8" rx="8"/>
+    <circle cx="66" cy="92" r="14" fill="url(#setupAccent)"/>
+    <text x="66" y="97" font-size="14" fill="#fff" text-anchor="middle" font-weight="bold">1</text>
+    <text x="90" y="97" font-size="13" font-weight="bold" fill="#1a1a2e">Install VS Code</text>
+    <text x="56" y="130" font-size="12" fill="#5a5f68">code.visualstudio.com</text>
+    <text x="56" y="150" font-size="24" text-anchor="middle" dx="30">&#128187;</text>
+
+    <line x1="248" y1="130" x2="288" y2="130" stroke="#c7cbd4" stroke-width="2" marker-end="url(#arrow2)"/>
+
+    <!-- step 2 -->
+    <rect x="290" y="66" width="200" height="130" fill="#f6f8fa" stroke="#e1e4e8" rx="8"/>
+    <circle cx="316" cy="92" r="14" fill="url(#setupAccent)"/>
+    <text x="316" y="97" font-size="14" fill="#fff" text-anchor="middle" font-weight="bold">2</text>
+    <text x="340" y="97" font-size="13" font-weight="bold" fill="#1a1a2e">Add YAML extension</text>
+    <text x="306" y="130" font-size="12" fill="#5a5f68">Red Hat: redhat.vscode-yaml</text>
+    <text x="380" y="160" font-size="24" text-anchor="middle">&#129513;</text>
+
+    <line x1="498" y1="130" x2="538" y2="130" stroke="#c7cbd4" stroke-width="2" marker-end="url(#arrow2)"/>
+
+    <!-- step 3 -->
+    <rect x="540" y="66" width="200" height="130" fill="#f6f8fa" stroke="#e1e4e8" rx="8"/>
+    <circle cx="566" cy="92" r="14" fill="url(#setupAccent)"/>
+    <text x="566" y="97" font-size="14" fill="#fff" text-anchor="middle" font-weight="bold">3</text>
+    <text x="590" y="97" font-size="13" font-weight="bold" fill="#1a1a2e">Create the file</text>
+    <text x="556" y="130" font-family="Consolas, monospace" font-size="12" fill="#5a5f68">config.yaml</text>
+    <text x="630" y="160" font-size="24" text-anchor="middle">&#128196;</text>
+
+    <line x1="748" y1="130" x2="788" y2="130" stroke="#c7cbd4" stroke-width="2" marker-end="url(#arrow2)"/>
+
+    <!-- step 4 -->
+    <rect x="790" y="66" width="170" height="130" fill="#f0fbf8" stroke="#bfe9e1" rx="8"/>
+    <circle cx="816" cy="92" r="14" fill="#2fb8a6"/>
+    <text x="816" y="97" font-size="14" fill="#fff" text-anchor="middle" font-weight="bold">4</text>
+    <text x="840" y="97" font-size="13" font-weight="bold" fill="#1c8a7b">Save &amp; get help</text>
+    <text x="806" y="130" font-size="12" fill="#1c8a7b">autocomplete +</text>
+    <text x="806" y="146" font-size="12" fill="#1c8a7b">inline validation</text>
+    <text x="860" y="176" font-size="24" text-anchor="middle">&#9989;</text>
+  </g>
+</svg>

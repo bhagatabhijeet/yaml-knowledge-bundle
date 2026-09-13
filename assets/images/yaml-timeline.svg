@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="260" viewBox="0 0 1000 260">
+  <defs>
+    <linearGradient id="timelineAccent" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#ff8a5c"/>
+      <stop offset="50%" stop-color="#6a5cff"/>
+      <stop offset="100%" stop-color="#2fb8a6"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1000" height="260" fill="#ffffff" stroke="#e3e6ea" rx="14"/>
+  <text x="40" y="42" font-size="20" font-weight="bold" font-family="Arial" fill="#1a1a2e">Why YAML happened: XML &#8594; JSON &#8594; YAML</text>
+
+  <!-- timeline bar -->
+  <rect x="80" y="120" width="840" height="6" rx="3" fill="url(#timelineAccent)"/>
+
+  <!-- XML node -->
+  <circle cx="140" cy="123" r="12" fill="#ff8a5c"/>
+  <text x="90" y="90" font-family="Arial" font-size="14" font-weight="bold" fill="#c65a30">1990s &#183; XML</text>
+  <text x="70" y="160" font-family="Arial" font-size="12" fill="#5a4238">Enterprise &amp; SOAP</text>
+  <text x="60" y="178" font-family="Arial" font-size="12" fill="#5a4238">web services</text>
+  <rect x="70" y="196" width="140" height="14" fill="#ffd6c4" rx="3"/>
+  <text x="76" y="207" font-family="Arial" font-size="10" fill="#8a5a45">verbose &#8594;</text>
+
+  <!-- JSON node -->
+  <circle cx="500" cy="123" r="12" fill="#6a5cff"/>
+  <text x="450" y="90" font-family="Arial" font-size="14" font-weight="bold" fill="#4638c2">2000s &#183; JSON</text>
+  <text x="430" y="160" font-family="Arial" font-size="12" fill="#333a5c">Mobile &amp; REST APIs</text>
+  <text x="430" y="178" font-family="Arial" font-size="12" fill="#333a5c">need something lighter</text>
+  <rect x="430" y="196" width="90" height="14" fill="#c9d8ff" rx="3"/>
+  <text x="436" y="207" font-family="Arial" font-size="10" fill="#4638c2">lighter &#8594;</text>
+
+  <!-- YAML node -->
+  <circle cx="860" cy="123" r="12" fill="#2fb8a6"/>
+  <text x="800" y="90" font-family="Arial" font-size="14" font-weight="bold" fill="#1c8a7b">2001+ &#183; YAML</text>
+  <text x="790" y="160" font-family="Arial" font-size="12" fill="#1a1a2e">CI/CD &amp; config files</text>
+  <text x="790" y="178" font-family="Arial" font-size="12" fill="#1a1a2e">need humans to edit them</text>
+  <rect x="790" y="196" width="50" height="14" fill="#bfe9e1" rx="3"/>
+  <text x="796" y="207" font-family="Arial" font-size="10" fill="#1c8a7b">lightest</text>
+
+  <text x="500" y="240" font-family="Arial" font-size="13" fill="#7a7f89" text-anchor="middle">Each format traded strictness for something people actually needed: speed, then readability.</text>
+</svg>

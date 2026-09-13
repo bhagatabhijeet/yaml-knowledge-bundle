@@ -9,6 +9,8 @@ generated: { by: human:bhagatabhijeet, at: 2026-09-13T04:58:00Z }
 
 Let's see why YAML is different from XML and JSON, and why YAML has become so popular for configuration and human-edited files.
 
+![XML to JSON to YAML timeline](../assets/images/yaml-timeline.svg)
+
 Quick timeline
 
 - 1990s — XML appears and becomes widely used for data serialization and document interchange. It uses opening and closing tags (e.g., <tag>...</tag>) and is schema-friendly.
