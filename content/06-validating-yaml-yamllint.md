@@ -14,8 +14,10 @@ Why validate?
 
 Install `yamllint`
 
+`yamllint` is a Python module. Refer to the [official quickstart docs](https://yamllint.readthedocs.io/en/stable/quickstart.html) for details.
+
+- Any platform (pip): `pip install yamllint`
 - macOS (Homebrew): `brew install yamllint`
-- Linux (pip): `pip install yamllint`
 - Debian/Ubuntu: `sudo apt install yamllint`
 
 Run it on a file
