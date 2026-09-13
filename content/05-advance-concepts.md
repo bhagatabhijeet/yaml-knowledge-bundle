@@ -56,18 +56,32 @@ Think of an anchor as giving a **nickname** to a block of YAML, so you can reuse
 - Anchors and aliases sometimes remind people of pointers in C.
 - The one restriction: an anchor/alias name cannot contain `[`, `]`, `,`, or `{` characters.
 
-Let's construct a small list of ExampleCorp office locations, anchor them by country, and then say which employee can report to which country's locations.
+Let's construct a list of ExampleCorp office locations, anchor them by country, and then say which employee can report to which country's locations.
 
 ```yaml
 ExampleCorpLocations:
   USALocations: &uslocations
-    - San Ramon, California
-    - Austin, Texas
-    - Portland, Oregon
+    - Denver, Colorado
+    - Phoenix, Arizona
+    - Nashville, Tennessee
+    - Columbus, Ohio
+    - Raleigh, North Carolina
+    - Salt Lake City, Utah
+    - Tampa, Florida
+    - Boise, Idaho
+    - Madison, Wisconsin
+    - Reno, Nevada
+    - Richmond, Virginia
+    - Spokane, Washington
+    - Tucson, Arizona
   CanadaLocations: &canlocations
-    - Waterloo
-    - Ottawa
-    - Vancouver
+    - Calgary
+    - Edmonton
+    - Winnipeg
+    - Regina
+    - Quebec City
+    - Victoria
+    - Kingston
 
 employees:
   - employee:
@@ -78,26 +92,70 @@ employees:
      canreportto: *canlocations
 ```
 
-Note the use of `&` and `*` to define and reuse the location lists — `*uslocations` simply expands to the same three-item list defined above.
+Note the use of `&` and `*` to define and reuse the location lists — `*uslocations` simply expands to the full list defined above, wherever it's referenced.
 
 The corresponding JSON:
 
 ```json
 {
   "ExampleCorpLocations": {
-    "USALocations": ["San Ramon, California", "Austin, Texas", "Portland, Oregon"],
-    "CanadaLocations": ["Waterloo", "Ottawa", "Vancouver"]
+    "USALocations": [
+      "Denver, Colorado",
+      "Phoenix, Arizona",
+      "Nashville, Tennessee",
+      "Columbus, Ohio",
+      "Raleigh, North Carolina",
+      "Salt Lake City, Utah",
+      "Tampa, Florida",
+      "Boise, Idaho",
+      "Madison, Wisconsin",
+      "Reno, Nevada",
+      "Richmond, Virginia",
+      "Spokane, Washington",
+      "Tucson, Arizona"
+    ],
+    "CanadaLocations": [
+      "Calgary",
+      "Edmonton",
+      "Winnipeg",
+      "Regina",
+      "Quebec City",
+      "Victoria",
+      "Kingston"
+    ]
   },
   "employees": [
     {
       "employee": null,
       "name": "Alice",
-      "canreportto": ["San Ramon, California", "Austin, Texas", "Portland, Oregon"]
+      "canreportto": [
+        "Denver, Colorado",
+        "Phoenix, Arizona",
+        "Nashville, Tennessee",
+        "Columbus, Ohio",
+        "Raleigh, North Carolina",
+        "Salt Lake City, Utah",
+        "Tampa, Florida",
+        "Boise, Idaho",
+        "Madison, Wisconsin",
+        "Reno, Nevada",
+        "Richmond, Virginia",
+        "Spokane, Washington",
+        "Tucson, Arizona"
+      ]
     },
     {
       "employee": {
         "name": "Bob",
-        "canreportto": ["Waterloo", "Ottawa", "Vancouver"]
+        "canreportto": [
+          "Calgary",
+          "Edmonton",
+          "Winnipeg",
+          "Regina",
+          "Quebec City",
+          "Victoria",
+          "Kingston"
+        ]
       }
     }
   ]
