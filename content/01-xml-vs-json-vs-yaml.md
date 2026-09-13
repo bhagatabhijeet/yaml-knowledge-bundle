@@ -1,5 +1,7 @@
 ---
+type: Guide
 title: "XML vs JSON vs YAML"
+description: "Quick comparison and short examples for beginners"
 ---
 
 # XML vs JSON vs YAML
