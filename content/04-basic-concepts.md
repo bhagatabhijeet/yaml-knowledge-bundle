@@ -7,7 +7,7 @@ generated: { by: human:bhagatabhijeet, at: 2026-09-13T04:58:00Z }
 
 # YAML Basic Concepts
 
-![YAML structure](assets/images/yaml-structure.svg)
+![YAML structure](../assets/images/yaml-structure.svg)
 
 New to YAML? Think of a YAML file like a very tidy, very picky notepad: no angle brackets, no curly braces — just words, colons, and careful spacing. This page walks through every building block one at a time, in plain English, with copy-pasteable examples for each.
 

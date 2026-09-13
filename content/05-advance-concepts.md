@@ -46,7 +46,7 @@ A complex key is a key that is itself a multiline string, a sequence, or another
 
 ## Anchors and Alias in YAML
 
-![Anchors and aliases](assets/images/yaml-anchors.svg)
+![Anchors and aliases](../assets/images/yaml-anchors.svg)
 
 Think of an anchor as giving a **nickname** to a block of YAML, so you can reuse it later by name instead of retyping (or copy-pasting) the whole thing.
 

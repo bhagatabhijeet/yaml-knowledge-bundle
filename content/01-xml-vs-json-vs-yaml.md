@@ -10,7 +10,7 @@ By Abhijeet Bhagat • 2 min read
 
 YAML is a superset of JSON — any valid JSON is valid YAML. A helpful analogy: if JavaScript is like JSON, then TypeScript is like YAML (YAML adds features that make files easier to author and read).
 
-![XML vs JSON vs YAML comparison](assets/images/xml-json-yaml-comparison.svg)
+![XML vs JSON vs YAML comparison](../assets/images/xml-json-yaml-comparison.svg)
 
 Quick comparison (for beginners)
 
