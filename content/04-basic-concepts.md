@@ -1,69 +1,269 @@
 ---
 type: Guide
 title: "YAML Basic Concepts"
-description: "Scalars, sequences, mappings, comments and common pitfalls"
+description: "Comments, scalars, strings, typing, timestamps, sequences, and dictionaries in YAML"
 generated: { by: human:bhagatabhijeet, at: 2026-09-13T04:58:00Z }
 ---
 
 # YAML Basic Concepts
 
-YAML uses indentation to show structure. Keep these basic ideas in mind:
+![YAML structure](assets/images/yaml-structure.svg)
 
-Scalars (plain values)
+Table of contents
 
-- Strings, numbers, booleans, and null are scalars.
-- Example: `name: Alice`, `age: 30`, `is_active: true`
+- [Comments in YAML](#comments-in-yaml)
+- [Scalars in YAML](#scalars-in-yaml)
+- [Strings in YAML](#strings-in-yaml)
+- [Implicit and explicit typing in YAML](#implicit-and-explicit-typing-in-yaml)
+- [Timestamps in YAML](#timestamps-in-yaml)
+- [Sequences in YAML](#sequences-in-yaml)
+- [Dictionaries in YAML](#dictionaries-in-yaml)
 
-Sequences (lists)
+## Comments in YAML
+
+- `#` is used for comments in YAML.
+- Comments can be inline, after a value, as well as on their own line.
+- The commented part is ignored by the parser.
+- YAML doesn't support multi-line comment blocks — if multiple lines need to be commented, each line needs its own `#`.
+- This is similar to comments in Python.
 
 ```yaml
-skills:
-  - yaml
-  - writing
-  - teaching
+# this is a full-line comment
+name: Alice  # this is an inline comment
 ```
 
-Mappings (key/value pairs)
+## Scalars in YAML
+
+- Scalars are single values.
+- Scalars are assigned to a "key" name as its value.
+- Define a key, followed by a colon and a space after the colon, then add the value after the colon.
+- Key and value are always separated by `:` (colon) and a space — do not use a tab.
+
+Example of a scalar value: `name: abhijeet`
+
+Scalar data types can be common types like integer, floating point numeric value, boolean, string, or null. Examples below (format: data type → key: value):
+
+- integer → `version: 2`
+- float → `acceleration_gravity: 9.81`
+- boolean → `isGloballyAvailable: true` (boolean values can also be written as `yes`/`no`)
+- null → `no-value: null` (null can also be represented using `~`, or simply leaving no value after the key)
+- string → `name: abhijeet`
+- positive infinity → `positive-infinity: Infinity` (can be shortened to `.inf`)
+- negative infinity → `negative-infinity: -Infinity` (can be shortened to `-.inf`)
+- invalid number → `invalidNum: Nan`
+
+## Strings in YAML
+
+- Strings in YAML don't need to be explicitly wrapped in double or single quotes.
+- Only use single or double quotes in YAML if your value includes a special character such as `{`, `}`, `[`, `]`, `"`, `'`, `&`, `:`, `*`, `#`, `?`, `.`, `-`, `<`, `>`, `=`, `!`, `%`, `@`, `\`.
+- `Yes` and `No` without quotes are interpreted as booleans. If you want `Yes`/`No` to be treated as strings, enclose them in single or double quotes.
+
+Long strings can use the following special block styles:
+
+- `>` (folded style) — removes newline characters from the string, folding lines into a single line separated by spaces.
+- `|` (literal style) — turns each newline in the string into a literal newline (`\n`), preserving line breaks.
+
+You can control how the final newline (and any trailing blank lines) is handled by adding a block chomping indicator character:
+
+- `>`, `|` — **clip**: keep the final line feed, remove trailing blank lines.
+- `>-`, `|-` — **strip**: remove the final line feed, remove trailing blank lines.
+- `>+`, `|+` — **keep**: keep the final line feed, keep trailing blank lines.
 
 ```yaml
-person:
-  name: Alice
-  age: 30
-```
-
-Comments
-
-- Use `#` for comments. Comments are ignored by parsers.
-
-Multi-line strings
-
-- Use `|` to preserve newlines, or `>` to fold newlines into spaces.
-
-```yaml
-bio: |
-  Line one
-  Line two
 folded: >
   This is a long sentence
   that will be folded into
   a single line.
+literal: |
+  Line one
+  Line two
+stripped: |-
+  No trailing newline kept
+kept: |+
+  Trailing blank lines are kept
+
 ```
 
-Flow style (inline)
+## Implicit and explicit typing in YAML
 
-- YAML supports inline mapping and sequence like JSON:
+YAML can implicitly understand data types — for example `1`, `2`, `3` are integers, `1.0`, `2.0` are floats, `true`, `false`, `yes`, `no` are booleans, and so on.
+
+But if you want to explicitly tell the YAML parser the data type of a scalar value, you can use the double exclamation type tag `!!<type>`:
 
 ```yaml
-inline_map: {a: 1, b: 2}
-inline_list: [one, two, three]
+YAML-is-cool: !!bool true
 ```
 
-Common pitfalls
+Why use explicit typing?
+
+- To improve readability.
+- To validate your YAML and catch data type errors.
+
+More explicit typing examples:
+
+- `!!int` for integer
+- `!!float` for float
+- `!!str` for string
+- `!!bool` for boolean
+- `!!null` for null
+
+## Timestamps in YAML
+
+- A timestamp represents a single point in time.
+- The explicit type tag for a timestamp is `!!timestamp`.
+- YAML supports several timestamp formats: canonical, ISO 8601, space-separated, no time zone, and date-only.
+
+| Format | Example |
+|---|---|
+| Canonical | `2001-12-15T02:59:43.1Z` |
+| ISO 8601 | `2001-12-14t21:59:43.10-05:00` |
+| Space separated | `2001-12-14 21:59:43.10 -5` |
+| No time zone (assumed Z) | `2001-12-15 2:59:43.10` |
+| Date only (00:00:00Z) | `2002-12-1` |
+
+- If the time zone is omitted, the timestamp is assumed to be UTC.
+- The time part can be omitted altogether — this results in a "date" format, which is assumed to be `00:00:00Z` (start of the UTC day).
+- A time zone can be included by specifying how many hours it is ahead of or behind UTC. For example, EST can be set with a `-5` at the end: `2001-12-14 21:59:43.10 -5`.
+
+## Sequences in YAML
+
+- Sequences are values listed in a specific order.
+- Sequences are like a list or array in programming languages.
+- Sequences can be defined in **block style** or **flow (inline) style**.
+- Block style uses a dash (hyphen) and a space.
+- Flow style uses square brackets, similar to a JSON array.
+- Sequences can be nested inside another sequence.
+
+### Sequence examples
+
+```yaml
+# Sequence example 1 - block style
+platformTeam:
+  - Alice Carter
+  - Bob Nguyen
+  - Carla Smith
+  - David Kim
+  - Elena Petrova
+  - Farid Khan
+  - Grace Lee
+
+# Sequence example 2 - inline flow style
+companyCaliforniaLocations: ["San Ramon", "Mountain View"]
+
+# Sequence example 3 - block style
+starTeam:
+  - Hugh Boyle
+  - Shreyans Jain
+  - Prakriti Dhillon
+
+iwsTeam:
+  - Ram Kusampudi
+  - Kasi Gogula
+  - Joshna Gaddam
+  - Ashish Sharma
+  - Adi Sekar
+
+# Sequence example 4 - one sequence nested inside another
+# NOTE: "teams" here is actually a list of lists.
+# Nested lists can go to any depth.
+teams:
+  - platformTeam:
+      - Alice Carter
+      - Bob Nguyen
+      - Carla Smith
+      - David Kim
+      - Elena Petrova
+      - Farid Khan
+      - Grace Lee
+  - starTeam:
+      - Hugh Boyle
+      - Shreyans Jain
+      - Prakriti Dhillon
+  - iwsTeam:
+      - Ram Kusampudi
+      - Kasi Gogula
+      - Joshna Gaddam
+      - Ashish Sharma
+      - Adi Sekar
+```
+
+> Note: team and people names above are placeholders, not real names, kept for illustration only.
+
+## Dictionaries in YAML
+
+- Dictionaries are also called **mappings** in YAML.
+- A dictionary, like in any other language, is a set of key-value pairs.
+- A dictionary is defined with a name, a colon, and a space, followed by one or more indented key-value pairs.
+- A dictionary is like a JSON object.
+
+Let's see how to create a dictionary for an `Employee` with keys `empid`, `name`, and `location`:
+
+```yaml
+Employee:
+  empid: 1
+  name: Alice
+  location: San Ramon
+```
+
+Now let's add a few employee objects to a list called `employees` (plural):
+
+```yaml
+employees:
+  - empid: 1
+    name: Bob
+    location: Mountain View
+  - empid: 2
+    name: Alice
+    location: San Ramon
+  - empid: 3
+    name: Carla
+    location: Austin
+  - empid: 4
+    location: San Mateo
+  - empid: 5
+    name: David
+    location: San Ramon
+```
+
+And here's the equivalent JSON. You can use an online converter such as an "YAML to JSON" tool to check the JSON output:
+
+```json
+{
+  "employees": [
+    {
+      "empid": 1,
+      "name": "Bob",
+      "location": "Mountain View"
+    },
+    {
+      "empid": 2,
+      "name": "Alice",
+      "location": "San Ramon"
+    },
+    {
+      "empid": 3,
+      "name": "Carla",
+      "location": "Austin"
+    },
+    {
+      "empid": 4,
+      "location": "San Mateo"
+    },
+    {
+      "empid": 5,
+      "name": "David",
+      "location": "San Ramon"
+    }
+  ]
+}
+```
+
+## Common pitfalls
 
 - Mixing tabs and spaces — always use spaces.
 - Wrong indentation levels — rely on your editor's indentation helpers.
 
-Exercise
+## Exercise
 
 Write a YAML snippet for a simple todo item with a title, due date, and a list of tags.
 
