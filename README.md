@@ -43,3 +43,7 @@ No prior YAML knowledge assumed. Basic comfort with a text editor is all you nee
 ## Contributing
 
 Found a typo, a confusing explanation, or want to add a lesson? See [CONTRIBUTING.md](CONTRIBUTING.md).
+
+## Disclaimer
+
+All company names, person names, locations, URLs, IDs, and other data values used in the examples throughout this bundle (including in `content/`, `assets/code/`, and `assets/images/`) are entirely fictitious. They are used solely to illustrate YAML syntax and concepts. Any resemblance to real companies, organizations, or persons, living or dead, or to actual events, is purely coincidental and unintentional. Do not use these examples as a source of factual information about any real entity.
