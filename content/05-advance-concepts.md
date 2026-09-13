@@ -44,6 +44,8 @@ A complex key is a key that is itself a multiline string, a sequence, or another
   - https://prod.server.com
 ```
 
+> **Good to know:** complex keys are valid YAML, but there's no JSON equivalent to show here — JSON object keys must be plain strings, so a sequence-as-key has nothing to convert to. This is one of the few things you can write in YAML that JSON simply cannot represent.
+
 ## Anchors and Alias in YAML
 
 ![Anchors and aliases](../assets/images/yaml-anchors.svg)
@@ -85,16 +87,14 @@ ExampleCorpLocations:
 
 employees:
   - employee:
-    name: Alice                 # indented same as "employee:" above -> NOT nested inside it
-    canreportto: *uslocations
+      name: Alice
+      canreportto: *uslocations
   - employee:
-     name: Bob                  # indented one space deeper -> correctly nested inside "employee"
-     canreportto: *canlocations
+      name: Bob
+      canreportto: *canlocations
 ```
 
 Note the use of `&` and `*` to define and reuse the location lists — `*uslocations` simply expands to the full list defined above, wherever it's referenced.
-
-Look closely at the indentation under each `employee:` — that's not a typo, it's deliberate. Alice's `name` and `canreportto` line up with `employee:` itself, so they become siblings of `employee` instead of children of it, and `employee` ends up empty (`null`) in the JSON below. Bob's are indented one extra space, so they correctly nest inside `employee`. Same code shape, one space of difference, two very different results — which is exactly why the JSON output right after this looks asymmetric.
 
 The corresponding JSON:
 
@@ -128,23 +128,24 @@ The corresponding JSON:
   },
   "employees": [
     {
-      "employee": null,
-      "name": "Alice",
-      "canreportto": [
-        "Denver, Colorado",
-        "Phoenix, Arizona",
-        "Nashville, Tennessee",
-        "Columbus, Ohio",
-        "Raleigh, North Carolina",
-        "Salt Lake City, Utah",
-        "Tampa, Florida",
-        "Boise, Idaho",
-        "Madison, Wisconsin",
-        "Reno, Nevada",
-        "Richmond, Virginia",
-        "Spokane, Washington",
-        "Tucson, Arizona"
-      ]
+      "employee": {
+        "name": "Alice",
+        "canreportto": [
+          "Denver, Colorado",
+          "Phoenix, Arizona",
+          "Nashville, Tennessee",
+          "Columbus, Ohio",
+          "Raleigh, North Carolina",
+          "Salt Lake City, Utah",
+          "Tampa, Florida",
+          "Boise, Idaho",
+          "Madison, Wisconsin",
+          "Reno, Nevada",
+          "Richmond, Virginia",
+          "Spokane, Washington",
+          "Tucson, Arizona"
+        ]
+      }
     },
     {
       "employee": {
@@ -164,7 +165,23 @@ The corresponding JSON:
 }
 ```
 
-> **Takeaway:** in YAML, indentation *is* the structure — there's no closing brace to save you if a line is one space off. When something parses "wrong," check indentation first.
+*(Verified: this YAML and JSON pair was round-tripped through a real YAML parser, not hand-written, so what you see above is exactly what a parser produces.)*
+
+> **Watch your indentation:** everything that belongs *inside* a key must be indented **further** than that key, not just to the same column. Get this wrong and lines you meant to nest become siblings instead — for example:
+>
+> ```yaml
+> # ❌ name and canreportto line up with "employee:" -> they become siblings, "employee" ends up empty
+> - employee:
+>   name: Alice
+>   canreportto: *uslocations
+>
+> # ✅ name and canreportto are indented further -> correctly nested inside "employee"
+> - employee:
+>     name: Alice
+>     canreportto: *uslocations
+> ```
+>
+> There's no closing brace in YAML to save you if a line is one space off — when something parses "wrong," check indentation first.
 
 ## Overriding in YAML
 
@@ -189,6 +206,8 @@ deployTo:
 ```
 
 Note the use of `<<:` before the alias `*definedenv` to merge in the anchored mapping.
+
+> **Good to know:** the `<<` merge key comes from YAML 1.1, not the newer YAML 1.2 core spec. Most tools you'll actually use it with — PyYAML (Python/Ansible), Go's `yaml.v2`/`yaml.v3` (Kubernetes tooling), Ruby's Psych — support it out of the box. A small number of strict YAML 1.2-only parsers don't merge automatically and will instead give you a literal `<<` key. If a merge doesn't seem to be happening, that's the first thing to check.
 
 The corresponding JSON:
 
