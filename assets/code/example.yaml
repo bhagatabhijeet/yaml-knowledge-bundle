@@ -1,0 +1,18 @@
+# Example YAML
+
+# This is a tiny example file to demonstrate basic YAML syntax.
+# Add your real examples to assets/code/ and reference them from content files.
+
+person:
+  name: "Alice"
+  age: 30
+  is_active: true
+  skills:
+    - yaml
+    - writing
+    - teaching
+
+# Multi-line string example:
+bio: |
+  Alice is a YAML enthusiast who writes
+  clear, beginner-friendly tutorials.

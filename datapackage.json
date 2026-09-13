@@ -1,0 +1,14 @@
+{
+  "name": "yaml-knowledge-bundle",
+  "title": "YAML Knowledge Bundle",
+  "description": "An OKF-style knowledge bundle to teach YAML to beginners.",
+  "version": "0.1.0",
+  "keywords": ["yaml", "tutorial", "beginners", "okf", "knowledge-bundle"],
+  "licenses": [
+    {
+      "name": "CC-BY-4.0",
+      "path": "https://creativecommons.org/licenses/by/4.0/"
+    }
+  ],
+  "resources": []
+}
