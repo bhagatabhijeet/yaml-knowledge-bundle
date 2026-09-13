@@ -95,5 +95,3 @@ colors:
   - blue
 primary: red
 ```
-
-If you want, I can add an expanded visual with examples side-by-side and a downloadable cheat-sheet for beginners. Tell me if you want me to commit that as well.

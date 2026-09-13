@@ -9,6 +9,8 @@ generated: { by: human:bhagatabhijeet, at: 2026-09-13T04:58:00Z }
 
 ![YAML structure](assets/images/yaml-structure.svg)
 
+New to YAML? Think of a YAML file like a very tidy, very picky notepad: no angle brackets, no curly braces — just words, colons, and careful spacing. This page walks through every building block one at a time, in plain English, with copy-pasteable examples for each.
+
 Table of contents
 
 - [Comments in YAML](#comments-in-yaml)
@@ -34,12 +36,13 @@ name: Alice  # this is an inline comment
 
 ## Scalars in YAML
 
-- Scalars are single values.
+A **scalar** is just a fancy word for a single, plain value — think of it like one sticky note with one label and one answer written on it. Nothing is nested inside it.
+
 - Scalars are assigned to a "key" name as its value.
 - Define a key, followed by a colon and a space after the colon, then add the value after the colon.
 - Key and value are always separated by `:` (colon) and a space — do not use a tab.
 
-Example of a scalar value: `name: abhijeet`
+Example of a scalar value: `name: alice`
 
 Scalar data types can be common types like integer, floating point numeric value, boolean, string, or null. Examples below (format: data type → key: value):
 
@@ -47,7 +50,7 @@ Scalar data types can be common types like integer, floating point numeric value
 - float → `acceleration_gravity: 9.81`
 - boolean → `isGloballyAvailable: true` (boolean values can also be written as `yes`/`no`)
 - null → `no-value: null` (null can also be represented using `~`, or simply leaving no value after the key)
-- string → `name: abhijeet`
+- string → `name: alice`
 - positive infinity → `positive-infinity: Infinity` (can be shortened to `.inf`)
 - negative infinity → `negative-infinity: -Infinity` (can be shortened to `-.inf`)
 - invalid number → `invalidNum: Nan`
@@ -63,11 +66,11 @@ Long strings can use the following special block styles:
 - `>` (folded style) — removes newline characters from the string, folding lines into a single line separated by spaces.
 - `|` (literal style) — turns each newline in the string into a literal newline (`\n`), preserving line breaks.
 
-You can control how the final newline (and any trailing blank lines) is handled by adding a block chomping indicator character:
+You can also control what happens to the blank space at the *very end* of the string, using a "chomping indicator" (`-` or `+`) right after `>` or `|`. Don't worry about memorizing all of these — plain `|` and `>` cover almost every real situation; the variants below are for the rare case where trailing blank lines actually matter:
 
-- `>`, `|` — **clip**: keep the final line feed, remove trailing blank lines.
-- `>-`, `|-` — **strip**: remove the final line feed, remove trailing blank lines.
-- `>+`, `|+` — **keep**: keep the final line feed, keep trailing blank lines.
+- `>`, `|` — **clip** (the default): keep one final line break, drop any extra blank lines after it.
+- `>-`, `|-` — **strip**: drop the final line break entirely.
+- `>+`, `|+` — **keep**: keep the final line break *and* any blank lines after it.
 
 ```yaml
 folded: >
@@ -107,7 +110,11 @@ More explicit typing examples:
 - `!!bool` for boolean
 - `!!null` for null
 
+You'll rarely need to type these yourself — YAML almost always guesses the right type on its own. It's still good to recognize `!!` when you spot it in someone else's file, so it doesn't look like a typo.
+
 ## Timestamps in YAML
+
+You almost never type a timestamp by hand — a tool usually generates it for you (a build system, a log, a CI pipeline). This section is here so the formats look familiar when you see them, not because you need to memorize them.
 
 - A timestamp represents a single point in time.
 - The explicit type tag for a timestamp is `!!timestamp`.
@@ -127,6 +134,8 @@ More explicit typing examples:
 
 ## Sequences in YAML
 
+A **sequence** is just a list — the YAML word for what most programming languages call an array.
+
 - Sequences are values listed in a specific order.
 - Sequences are like a list or array in programming languages.
 - Sequences can be defined in **block style** or **flow (inline) style**.
@@ -137,59 +146,32 @@ More explicit typing examples:
 ### Sequence examples
 
 ```yaml
-# Sequence example 1 - block style
+# Sequence example 1 - block style (most common)
 platformTeam:
-  - Alice Carter
-  - Bob Nguyen
-  - Carla Smith
-  - David Kim
-  - Elena Petrova
-  - Farid Khan
-  - Grace Lee
+  - Alice
+  - Bob
+  - Carla
 
-# Sequence example 2 - inline flow style
-companyCaliforniaLocations: ["San Ramon", "Mountain View"]
+# Sequence example 2 - flow (inline) style, same meaning as above
+supportTeam: ["David", "Elena"]
 
-# Sequence example 3 - block style
-starTeam:
-  - Hugh Boyle
-  - Shreyans Jain
-  - Prakriti Dhillon
-
-iwsTeam:
-  - Ram Kusampudi
-  - Kasi Gogula
-  - Joshna Gaddam
-  - Ashish Sharma
-  - Adi Sekar
-
-# Sequence example 4 - one sequence nested inside another
-# NOTE: "teams" here is actually a list of lists.
-# Nested lists can go to any depth.
+# Sequence example 3 - a sequence nested inside another sequence
+# "teams" here is a list of lists — nested lists can go to any depth.
 teams:
   - platformTeam:
-      - Alice Carter
-      - Bob Nguyen
-      - Carla Smith
-      - David Kim
-      - Elena Petrova
-      - Farid Khan
-      - Grace Lee
-  - starTeam:
-      - Hugh Boyle
-      - Shreyans Jain
-      - Prakriti Dhillon
-  - iwsTeam:
-      - Ram Kusampudi
-      - Kasi Gogula
-      - Joshna Gaddam
-      - Ashish Sharma
-      - Adi Sekar
+      - Alice
+      - Bob
+      - Carla
+  - supportTeam:
+      - David
+      - Elena
 ```
 
-> Note: team and people names above are placeholders, not real names, kept for illustration only.
+> Note: names above are placeholders, kept simple for illustration only.
 
 ## Dictionaries in YAML
+
+A **dictionary** (also called a **mapping**) is like a business card: several labeled fields — name, title, phone — grouped together under one contact. Each field is a key-value pair, just like the scalars you already saw, but now grouped under a shared name.
 
 - Dictionaries are also called **mappings** in YAML.
 - A dictionary, like in any other language, is a set of key-value pairs.
@@ -216,16 +198,12 @@ employees:
     name: Alice
     location: San Ramon
   - empid: 3
-    name: Carla
-    location: Austin
-  - empid: 4
     location: San Mateo
-  - empid: 5
-    name: David
-    location: San Ramon
 ```
 
-And here's the equivalent JSON. You can use an online converter such as an "YAML to JSON" tool to check the JSON output:
+Notice employee 3 has no `name` — YAML doesn't require every item in a list to have the same fields. That's fine, and it's a good habit to check for missing fields like this in your own data.
+
+Here's the equivalent JSON, so you can see the two side by side. (Try it yourself with any online "YAML to JSON" converter.)
 
 ```json
 {
@@ -242,17 +220,7 @@ And here's the equivalent JSON. You can use an online converter such as an "YAML
     },
     {
       "empid": 3,
-      "name": "Carla",
-      "location": "Austin"
-    },
-    {
-      "empid": 4,
       "location": "San Mateo"
-    },
-    {
-      "empid": 5,
-      "name": "David",
-      "location": "San Ramon"
     }
   ]
 }

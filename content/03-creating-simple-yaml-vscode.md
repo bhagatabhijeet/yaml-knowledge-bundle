@@ -59,6 +59,4 @@ Exercise
 
 - Open VS Code, create `assets/code/examplecorp.yml`, paste the example above, save, and observe how the YAML extension gives syntax help. Try changing values and adding a comment using `#`.
 
-When you're ready I can also:
-- Add a `.yamllint` config to enforce beginner-friendly rules.
-- Add a GitHub Action to run yamllint on pushes and PRs.
+Next up: learn how to check your YAML for mistakes automatically in [Validating YAML using yamllint](06-validating-yaml-yamllint.md).

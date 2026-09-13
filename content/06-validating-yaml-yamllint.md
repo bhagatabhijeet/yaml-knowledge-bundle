@@ -38,4 +38,4 @@ Quick example: Check all YAML files in the repo
 yamllint .
 ```
 
-If you want, I can add a `.yamllint` config file to this repo with beginner-friendly rules (2-space indentation, allow long lines for examples). Ask and I'll add it.
+That's it — you now know enough YAML to read, write, and validate real-world config files. 🎉
