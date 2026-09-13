@@ -4,25 +4,30 @@ title: "XML vs JSON vs YAML"
 
 # XML vs JSON vs YAML
 
-Short comparison
+By Abhijeet Bhagat • 2 min read
 
-- XML
-  - Verbose, uses tags (good for documents and strict schemas)
-  - Well supported in older systems
-- JSON
-  - Compact, machine-friendly, native to JavaScript
-  - Good for APIs and data interchange
-- YAML
-  - Human-friendly, readable, supports comments and complex features
-  - Great for configuration and long-hand examples
+YAML is a superset of JSON — any valid JSON is valid YAML. A helpful analogy: if JavaScript is like JSON, then TypeScript is like YAML (YAML adds features that make files easier to author and read).
 
-When to use
+![XML vs JSON vs YAML comparison](assets/images/xml-json-yaml-comparison.svg)
 
-- Use YAML for configuration files and examples where humans edit the file.
-- Use JSON for web APIs and where strict machine parsing is primary.
-- Use XML for document-style data or legacy systems requiring schema validation.
+Quick comparison (for beginners)
 
-Tiny examples (equivalent content)
+| Property | XML | JSON | YAML |
+|---|---:|---:|:---|
+| Human readability | Hard 😠 | Hard 😠 | Easy 😊 |
+| Syntax | Verbose, tags | Explicit, strict | Minimalist, indentation-based |
+| Comments | ✅ | ❌ (JSONC allows comments) | ✅ |
+| Hierarchy | Opening/closing tags <tag>...</tag> | Curly braces { } | Indentation (spaces) |
+| Size for transfer | Heavier ⬆️ | Lighter ⬇️ | Lighter ⬇️ |
+| Typical use cases | Document-style data, legacy systems | APIs, data interchange | Configuration, CI, human-edited files |
+
+Notes for beginners
+
+- YAML is designed to be easy to read and write by humans. It removes closing tags and uses indentation to show structure.
+- JSON is stricter (no comments in standard JSON), which is good for machine-to-machine communication but less convenient for hand-editing.
+- XML is powerful and schema-driven, but more verbose and harder to read for small configs.
+
+Short examples (same data in three formats)
 
 JSON:
 
@@ -56,12 +61,22 @@ XML equivalent:
 </person>
 ```
 
-Short notes for beginners
+When to choose which
 
-- YAML is easier to read and write by hand because it drops closing tags and uses indentation.
-- JSON is stricter (no comments) which makes it better for API payloads but worse for hand editing.
+- Choose YAML when humans will read and edit the file (config files, CI pipelines, local settings).
+- Choose JSON when you need strict, compact, machine-first data interchange (APIs).
+- Choose XML when you need document features, XML tooling, or strict schema validation.
 
-Exercise
+Tools and applications that use YAML heavily
+
+- Kubernetes (manifests)
+- Ansible (playbooks)
+- GitHub Actions (workflows)
+- Docker Compose
+- GitLab CI
+- Home Assistant
+
+Exercise (quick)
 
 Convert this JSON to YAML:
 
@@ -69,7 +84,7 @@ Convert this JSON to YAML:
 {"colors": ["red", "green", "blue"], "primary": "red"}
 ```
 
-Answer (hint: use a mapping and a sequence):
+Answer:
 
 ```yaml
 colors:
@@ -78,3 +93,5 @@ colors:
   - blue
 primary: red
 ```
+
+If you want, I can add an expanded visual with examples side-by-side and a downloadable cheat-sheet for beginners. Tell me if you want me to commit that as well.
