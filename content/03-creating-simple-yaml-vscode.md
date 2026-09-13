@@ -1,5 +1,8 @@
 ---
+type: Guide
 title: "Creating a simple YAML — Using VS Code"
+description: "How to create and edit a YAML file in VS Code and example"
+generated: { by: human:bhagatabhijeet, at: 2026-09-13T04:58:00Z }
 ---
 
 # Creating a simple YAML — Using VS Code

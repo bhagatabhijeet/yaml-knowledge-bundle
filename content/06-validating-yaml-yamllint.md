@@ -1,5 +1,8 @@
 ---
+type: Guide
 title: "Validating YAML using yamllint"
+description: "Install and use yamllint to catch common YAML issues"
+generated: { by: human:bhagatabhijeet, at: 2026-09-13T04:58:00Z }
 ---
 
 # Validating YAML using yamllint

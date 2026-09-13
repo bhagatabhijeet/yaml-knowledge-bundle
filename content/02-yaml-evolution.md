@@ -1,5 +1,8 @@
 ---
+type: Guide
 title: "YAML — Evolution"
+description: "Why YAML emerged and how it differs from XML and JSON"
+generated: { by: human:bhagatabhijeet, at: 2026-09-13T04:58:00Z }
 ---
 
 # YAML — Evolution

@@ -1,5 +1,8 @@
 ---
+type: Guide
 title: "YAML Basic Concepts"
+description: "Scalars, sequences, mappings, comments and common pitfalls"
+generated: { by: human:bhagatabhijeet, at: 2026-09-13T04:58:00Z }
 ---
 
 # YAML Basic Concepts

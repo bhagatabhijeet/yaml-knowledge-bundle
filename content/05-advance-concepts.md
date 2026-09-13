@@ -1,5 +1,8 @@
 ---
+type: Guide
 title: "YAML Advance Concepts"
+description: "Anchors, aliases, merge keys, tags, and complex multi-line formats"
+generated: { by: human:bhagatabhijeet, at: 2026-09-13T04:58:00Z }
 ---
 
 # YAML Advanced Concepts (for curious beginners)

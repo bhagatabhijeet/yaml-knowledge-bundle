@@ -1,7 +1,3 @@
----
-title: "YAML Knowledge Bundle — Index"
----
-
 # Welcome to the YAML Knowledge Bundle
 
 YAML is a lightweight, human-readable data-serialization language designed to be easy for humans to read while still supporting advanced features. YAML stands for "YAML Ain't Markup Language" and is commonly used for configuration, data exchange, and CI/CD pipelines.
