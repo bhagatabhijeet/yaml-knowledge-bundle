@@ -30,6 +30,7 @@ Child pages (read in order)
 4. [YAML Basic Concepts](04-basic-concepts.md) — scalars, lists, maps, indentation, comments
 5. [YAML Advance Concepts](05-advance-concepts.md) — anchors, aliases, merge keys, tags, multi-line strings
 6. [Validating YAML using yamllint](06-validating-yaml-yamllint.md) — install and run `yamllint` to catch common issues
+7. [YAML Cheat Sheet](07-cheat-sheet.md) — every rule and pattern from this bundle, on one page
 
 Each page links to the next one at the bottom, so once you start at page 1 you can just keep clicking "Next" through to the end.
 

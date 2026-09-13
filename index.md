@@ -12,6 +12,7 @@ This bundle follows the Open Knowledge Format (OKF) v0.2. It contains beginner-f
 4. [YAML Basic Concepts](content/04-basic-concepts.md) — scalars, sequences, mappings, and common pitfalls
 5. [YAML Advance Concepts](content/05-advance-concepts.md) — anchors, aliases, merge keys, tags
 6. [Validating YAML using yamllint](content/06-validating-yaml-yamllint.md) — linting and validation tips
+7. [YAML Cheat Sheet](content/07-cheat-sheet.md) — every rule and pattern from this bundle, on one page
 
 Each page also links to the next at the bottom, so you can read straight through in order.
 

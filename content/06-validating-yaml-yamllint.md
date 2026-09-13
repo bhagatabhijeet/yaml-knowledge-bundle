@@ -44,4 +44,4 @@ That's it — you now know enough YAML to read, write, and validate real-world c
 
 ---
 
-[← Previous: YAML Advance Concepts](05-advance-concepts.md) · [🏠 Home](../index.md)
+[← Previous: YAML Advance Concepts](05-advance-concepts.md) · [🏠 Home](../index.md) · [Next: Cheat Sheet →](07-cheat-sheet.md)

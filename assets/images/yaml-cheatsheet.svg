@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="220" viewBox="0 0 1000 220">
+  <defs>
+    <linearGradient id="cheatAccent" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#ff8a5c"/>
+      <stop offset="50%" stop-color="#6a5cff"/>
+      <stop offset="100%" stop-color="#2fb8a6"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1000" height="220" fill="#ffffff" stroke="#e3e6ea" rx="14"/>
+  <rect x="0" y="0" width="1000" height="8" fill="url(#cheatAccent)" rx="4"/>
+
+  <text x="40" y="48" font-size="24" font-weight="bold" font-family="Arial" fill="#1a1a2e">YAML Cheat Sheet</text>
+  <text x="40" y="74" font-size="14" font-family="Arial" fill="#7a7f89">Every concept from this bundle, on one page — for when you just need a quick reminder</text>
+
+  <!-- chip row summarizing sections -->
+  <g font-family="Arial" font-size="12" font-weight="bold" fill="#ffffff" text-anchor="middle">
+    <rect x="40" y="100" width="110" height="30" rx="15" fill="#ff8a5c"/>
+    <text x="95" y="120">Syntax</text>
+
+    <rect x="160" y="100" width="110" height="30" rx="15" fill="#6a5cff"/>
+    <text x="215" y="120">Types</text>
+
+    <rect x="280" y="100" width="130" height="30" rx="15" fill="#2fb8a6"/>
+    <text x="345" y="120">Sequences</text>
+
+    <rect x="420" y="100" width="150" height="30" rx="15" fill="#ff8a5c"/>
+    <text x="495" y="120">Anchors &amp; Merges</text>
+
+    <rect x="580" y="100" width="130" height="30" rx="15" fill="#6a5cff"/>
+    <text x="645" y="120">Multi-doc</text>
+
+    <rect x="720" y="100" width="120" height="30" rx="15" fill="#2fb8a6"/>
+    <text x="780" y="120">Pitfalls</text>
+
+    <rect x="850" y="100" width="110" height="30" rx="15" fill="#ff8a5c"/>
+    <text x="905" y="120">yamllint</text>
+  </g>
+
+  <text x="40" y="160" font-family="Consolas, monospace" font-size="13" fill="#4c4f57">key: value   # comment</text>
+  <text x="40" y="182" font-family="Consolas, monospace" font-size="13" fill="#4c4f57">list:</text>
+  <text x="60" y="182" font-family="Consolas, monospace" font-size="13" fill="#4c4f57" dx="30">- item1</text>
+  <text x="40" y="204" font-family="Consolas, monospace" font-size="13" fill="#4c4f57">map: { a: 1, b: 2 }</text>
+</svg>

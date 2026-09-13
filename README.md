@@ -8,6 +8,7 @@
   <img src="https://img.shields.io/badge/level-beginner-ff8a5c?style=flat-square" alt="beginner level">
   <img src="https://img.shields.io/badge/format-OKF%20v0.2-6a5cff?style=flat-square" alt="Open Knowledge Format v0.2">
   <img src="https://img.shields.io/badge/license-CC--BY--4.0-2fb8a6?style=flat-square" alt="CC BY 4.0 license">
+  <img src="https://img.shields.io/badge/bonus-cheat%20sheet-ff8a5c?style=flat-square" alt="includes a cheat sheet">
 </p>
 
 <h3 align="center">Stop watching hour-long YAML tutorials.</h3>
@@ -43,6 +44,8 @@ You don't need a video course to learn YAML. You need six short, focused pages a
 
 <p align="center"><b>Total: ~11 minutes.</b> Grab a coffee, not a weekend.</p>
 
+**Bonus:** [📋 YAML Cheat Sheet](content/07-cheat-sheet.md) — once you've read the six lessons, this is the one page you'll actually keep open in a tab. Every rule and pattern from the bundle, on one screen.
+
 ---
 
 ## Who this is for
@@ -55,7 +58,7 @@ No prior YAML knowledge assumed. Basic comfort with a text editor is all you nee
 
 ## What's inside
 
-- `content/` — the six lessons above, in reading order
+- `content/` — the six lessons above plus the cheat sheet, in reading order
 - `assets/code/` — example YAML files you can copy and run
 - `assets/images/` — diagrams referenced from the lessons
 - `datapackage.json` — [Open Knowledge Format](https://okfn.org/) (OKF)-style metadata for this bundle
