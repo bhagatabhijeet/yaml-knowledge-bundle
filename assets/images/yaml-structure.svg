@@ -1,13 +1,54 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="900" height="200">
-  <rect width="900" height="200" fill="#fff"/>
-  <text x="20" y="30" font-size="18" font-family="Arial">YAML structure (visual)</text>
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="290" viewBox="0 0 1000 290">
+  <defs>
+    <linearGradient id="structAccent" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#6a5cff"/>
+      <stop offset="100%" stop-color="#2fb8a6"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1000" height="290" fill="#ffffff" stroke="#e3e6ea" rx="14"/>
+  <rect x="0" y="0" width="10" height="290" fill="url(#structAccent)" rx="5"/>
+
+  <text x="40" y="42" font-size="20" font-weight="bold" font-family="Arial" fill="#1a1a2e">Anatomy of a YAML file</text>
+
+  <!-- code block -->
+  <rect x="40" y="64" width="300" height="190" fill="#f6f8fa" stroke="#e1e4e8" rx="8"/>
+  <g font-family="Consolas, Menlo, monospace" font-size="15">
+    <text x="56" y="94" fill="#8250df" font-weight="bold">person:</text>
+    <text x="76" y="120" fill="#0550ae" font-weight="bold">name</text><text x="118" y="120" fill="#57606a">: </text><text x="130" y="120" fill="#116329">Alice</text>
+    <text x="76" y="146" fill="#0550ae" font-weight="bold">age</text><text x="106" y="146" fill="#57606a">: </text><text x="118" y="146" fill="#953800">30</text>
+    <text x="76" y="172" fill="#0550ae" font-weight="bold">skills</text><text x="126" y="172" fill="#57606a">:</text>
+    <text x="96" y="198" fill="#cf222e">- </text><text x="112" y="198" fill="#116329">yaml</text>
+    <text x="96" y="224" fill="#cf222e">- </text><text x="112" y="224" fill="#116329">writing</text>
+  </g>
+
+  <!-- callouts -->
   <g font-family="Arial" font-size="13">
-    <rect x="20" y="50" width="200" height="110" fill="#f6f8fa" stroke="#ccd" rx="6"/>
-    <text x="30" y="75">person:</text>
-    <text x="50" y="100">name: Alice</text>
-    <text x="50" y="120">age: 30</text>
-    <text x="50" y="140">skills:</text>
-    <text x="70" y="160">- yaml</text>
-    <text x="70" y="180">- writing</text>
+    <line x1="340" y1="94" x2="420" y2="94" stroke="#8250df" stroke-width="2"/>
+    <rect x="422" y="78" width="180" height="32" fill="#f6effc" stroke="#e0c8f5" rx="16"/>
+    <text x="438" y="99" fill="#8250df" font-weight="bold">mapping name</text>
+
+    <line x1="340" y1="118" x2="420" y2="150" stroke="#0550ae" stroke-width="2"/>
+    <rect x="422" y="134" width="130" height="32" fill="#eef6ff" stroke="#c9e0ff" rx="16"/>
+    <text x="438" y="155" fill="#0550ae" font-weight="bold">key</text>
+
+    <line x1="150" y1="120" x2="150" y2="200" stroke="#116329" stroke-width="2" stroke-dasharray="3,3"/>
+    <rect x="422" y="190" width="140" height="32" fill="#eafbea" stroke="#b7e5b0" rx="16"/>
+    <text x="438" y="211" fill="#116329" font-weight="bold">value</text>
+
+    <line x1="96" y1="198" x2="422" y2="246" stroke="#cf222e" stroke-width="2"/>
+    <rect x="422" y="246" width="150" height="32" fill="#fff0ee" stroke="#ffc9c2" rx="16"/>
+    <text x="438" y="267" fill="#cf222e" font-weight="bold">list item</text>
+  </g>
+
+  <!-- key rules card -->
+  <g font-family="Arial" font-size="14">
+    <rect x="660" y="64" width="300" height="190" fill="#fbfaff" stroke="#e6e2fb" rx="8"/>
+    <text x="680" y="92" font-weight="bold" fill="#1a1a2e">3 rules that matter most</text>
+    <text x="680" y="122" fill="#333">1. Indent with spaces, never tabs</text>
+    <text x="680" y="150" fill="#333">2. Colon + space after every key</text>
+    <text x="680" y="178" fill="#333">3. Same indent = same nesting level</text>
+    <text x="680" y="216" fill="#7a7f89" font-style="italic">Get these three right and most</text>
+    <text x="680" y="234" fill="#7a7f89" font-style="italic">YAML errors disappear.</text>
   </g>
 </svg>

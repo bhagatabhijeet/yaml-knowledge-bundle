@@ -1,10 +1,53 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="900" height="120">
-  <rect width="900" height="120" fill="#fff"/>
-  <text x="20" y="28" font-size="16" font-family="Arial">Anchors & Aliases (visual)</text>
-  <text x="20" y="52" font-family="Arial" font-size="13">defaults: &defaults</text>
-  <text x="40" y="74" font-family="Arial" font-size="13">timeout: 30</text>
-  <text x="40" y="94" font-family="Arial" font-size="13">retries: 3</text>
-  <text x="260" y="52" font-family="Arial" font-size="13">serviceA:</text>
-  <text x="280" y="74" font-family="Arial" font-size="13"><<: *defaults</text>
-  <text x="280" y="94" font-family="Arial" font-size="13">endpoint: /service-a</text>
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="260" viewBox="0 0 1000 260">
+  <defs>
+    <linearGradient id="anchorAccent" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#ff8a5c"/>
+      <stop offset="100%" stop-color="#6a5cff"/>
+    </linearGradient>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#6a5cff"/>
+    </marker>
+  </defs>
+
+  <rect width="1000" height="260" fill="#ffffff" stroke="#e3e6ea" rx="14"/>
+  <rect x="0" y="0" width="10" height="260" fill="url(#anchorAccent)" rx="5"/>
+
+  <text x="40" y="40" font-size="20" font-weight="bold" font-family="Arial" fill="#1a1a2e">Anchors &amp; aliases: give a block a nickname, reuse it anywhere</text>
+
+  <!-- anchor definition -->
+  <rect x="40" y="64" width="260" height="150" fill="#fff5f2" stroke="#ffd6c4" rx="8"/>
+  <text x="56" y="90" font-family="Arial" font-size="13" font-weight="bold" fill="#c65a30">Defined once</text>
+  <g font-family="Consolas, monospace" font-size="13" fill="#5a4238">
+    <text x="56" y="114">defaults: <tspan fill="#c65a30" font-weight="bold">&amp;defaults</tspan></text>
+    <text x="76" y="136">timeout: 30</text>
+    <text x="76" y="158">retries: 3</text>
+  </g>
+  <text x="56" y="196" font-family="Arial" font-size="12" fill="#8a5a45">&amp; creates the nickname</text>
+
+  <!-- arrows -->
+  <line x1="300" y1="110" x2="380" y2="90" stroke="#6a5cff" stroke-width="2" marker-end="url(#arrow)"/>
+  <line x1="300" y1="150" x2="380" y2="190" stroke="#6a5cff" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- reuse 1 -->
+  <rect x="384" y="56" width="280" height="80" fill="#f2f6ff" stroke="#c9d8ff" rx="8"/>
+  <text x="400" y="78" font-family="Arial" font-size="13" font-weight="bold" fill="#4638c2">serviceA</text>
+  <g font-family="Consolas, monospace" font-size="13" fill="#333a5c">
+    <text x="400" y="100"><tspan fill="#4638c2" font-weight="bold">&lt;&lt;: *defaults</tspan></text>
+    <text x="400" y="120">endpoint: /service-a</text>
+  </g>
+
+  <!-- reuse 2 -->
+  <rect x="384" y="150" width="280" height="80" fill="#f2f6ff" stroke="#c9d8ff" rx="8"/>
+  <text x="400" y="172" font-family="Arial" font-size="13" font-weight="bold" fill="#4638c2">serviceB</text>
+  <g font-family="Consolas, monospace" font-size="13" fill="#333a5c">
+    <text x="400" y="194"><tspan fill="#4638c2" font-weight="bold">&lt;&lt;: *defaults</tspan></text>
+    <text x="400" y="214">endpoint: /service-b</text>
+  </g>
+
+  <text x="684" y="80" font-family="Arial" font-size="12" fill="#7a7f89" width="280">* pulls the</text>
+  <text x="684" y="96" font-family="Arial" font-size="12" fill="#7a7f89">nicknamed block</text>
+  <text x="684" y="112" font-family="Arial" font-size="12" fill="#7a7f89">back in, in full —</text>
+  <text x="684" y="128" font-family="Arial" font-size="12" fill="#7a7f89">no retyping needed</text>
+
+  <text x="700" y="240" font-family="Arial" font-size="13" fill="#2fb8a6" font-weight="bold">Both services now share the same timeout &amp; retries — defined only once.</text>
 </svg>
