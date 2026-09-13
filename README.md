@@ -1,29 +1,45 @@
 # YAML Knowledge Bundle
 
-An Open Knowledge Foundation (OKF) style knowledge bundle for YAML, targeted at beginners.
+![Learn YAML in minutes](assets/images/hero-banner.svg)
 
-This repository is a friendly, example-first introduction to YAML with space for images and code samples. You told me you'll provide the content later — this commit creates a scaffold that makes it easy to drop your content, images, and code into the right places.
+## Stop watching hour-long YAML tutorials.
 
-What I created
+You don't need a video course to learn YAML. You need six short, focused pages and about **11 minutes**. This bundle gets you from "what's a scalar?" to confidently reading and writing real Kubernetes manifests, GitHub Actions workflows, and CI configs — with plain-English explanations, friendly analogies, and copy-pasteable examples at every step.
 
-- datapackage.json — minimal OKF-style metadata for the bundle.
-- README.md — this file (you are reading it).
-- content/index.md — a content placeholder where the tutorial text will go.
-- assets/images/ — directory for images (put images here). Use descriptive names and add alt text in the content.
-- assets/code/ — directory for YAML examples and sample files. Keep code snippets here, referenced from content.
-- assets/code/example.yaml — a small example YAML file with explanatory comments.
-- assets/images/.gitkeep and assets/code/.gitkeep — placeholders so the directories are tracked.
-- CONTRIBUTING.md — simple contributor guide and style rules to keep the bundle beginner-friendly.
+## Why this instead of a tutorial video
 
-Quick authoring notes (for you or contributors)
+- ⏱ **~11 minutes, 6 bite-sized lessons** — most pages are a 1-4 minute read, not a 45-minute video you have to scrub through.
+- 🧠 **Beginner-first, jargon explained** — every technical term (scalar, anchor, mapping...) gets a plain-English analogy before the syntax.
+- 🧪 **Real, runnable examples** — every concept ships with working YAML you can copy into your own editor, not just prose.
+- 🖼 **Visual, not just verbal** — diagrams for structure, anchors, and format comparisons.
+- ✅ **Validated, not just written** — finish by learning `yamllint`, so your YAML is correct before it ever hits a pipeline.
 
-- Add chapter content to content/index.md or create new files in content/ and link from index.md.
-- Put image files in assets/images/ and reference them from markdown using relative paths: `assets/images/your-image.png`.
-- Put example YAML files and code snippets in assets/code/. Reference them when you want learners to download or view a full file.
-- Aim for very short paragraphs, annotated examples, step-by-step exercises, and lots of visuals for beginners.
+## Start learning → [index.md](index.md)
 
-Preview
+| # | Lesson | Time | What you'll walk away with |
+|---|---|---|---|
+| 1 | [XML vs JSON vs YAML](content/01-xml-vs-json-vs-yaml.md) | 2 min | Why YAML won for config files |
+| 2 | [YAML — Evolution](content/02-yaml-evolution.md) | 1 min | The XML → JSON → YAML story |
+| 3 | [Creating a simple YAML — VS Code](content/03-creating-simple-yaml-vscode.md) | 1 min | Your first `.yaml` file, done right |
+| 4 | [YAML Basic Concepts](content/04-basic-concepts.md) | 4 min | Scalars, strings, sequences, dictionaries |
+| 5 | [YAML Advance Concepts](content/05-advance-concepts.md) | 2 min | Anchors, aliases, overrides, multi-doc files |
+| 6 | [Validating YAML with yamllint](content/06-validating-yaml-yamllint.md) | 1 min | Catch mistakes before they ship |
 
-- Markdown files can be previewed directly on GitHub. Once you add content/images, open content/index.md to check formatting.
+**Total: ~11 minutes.** Grab a coffee, not a weekend.
 
-If you want, tell me the sections or paste the content now and I'll add it into the bundle with images and code arranged as you requested.
+## Who this is for
+
+Anyone who needs to read or write YAML for Kubernetes, GitHub Actions, Ansible, Docker Compose, or CI pipelines — and would rather learn it properly in one sitting than piece it together from scattered Stack Overflow answers.
+
+No prior YAML knowledge assumed. Basic comfort with a text editor is all you need.
+
+## What's inside
+
+- `content/` — the six lessons above, in reading order
+- `assets/code/` — example YAML files you can copy and run
+- `assets/images/` — diagrams referenced from the lessons
+- `datapackage.json` — [Open Knowledge Format](https://okfn.org/) (OKF)-style metadata for this bundle
+
+## Contributing
+
+Found a typo, a confusing explanation, or want to add a lesson? See [CONTRIBUTING.md](CONTRIBUTING.md).
