@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="200">
+  <rect width="900" height="200" fill="#fff"/>
+  <text x="20" y="30" font-size="18" font-family="Arial">YAML structure (visual)</text>
+  <g font-family="Arial" font-size="13">
+    <rect x="20" y="50" width="200" height="110" fill="#f6f8fa" stroke="#ccd" rx="6"/>
+    <text x="30" y="75">person:</text>
+    <text x="50" y="100">name: Alice</text>
+    <text x="50" y="120">age: 30</text>
+    <text x="50" y="140">skills:</text>
+    <text x="70" y="160">- yaml</text>
+    <text x="70" y="180">- writing</text>
+  </g>
+</svg>

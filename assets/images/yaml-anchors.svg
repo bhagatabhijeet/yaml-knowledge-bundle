@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="120">
+  <rect width="900" height="120" fill="#fff"/>
+  <text x="20" y="28" font-size="16" font-family="Arial">Anchors & Aliases (visual)</text>
+  <text x="20" y="52" font-family="Arial" font-size="13">defaults: &defaults</text>
+  <text x="40" y="74" font-family="Arial" font-size="13">timeout: 30</text>
+  <text x="40" y="94" font-family="Arial" font-size="13">retries: 3</text>
+  <text x="260" y="52" font-family="Arial" font-size="13">serviceA:</text>
+  <text x="280" y="74" font-family="Arial" font-size="13"><<: *defaults</text>
+  <text x="280" y="94" font-family="Arial" font-size="13">endpoint: /service-a</text>
+</svg>

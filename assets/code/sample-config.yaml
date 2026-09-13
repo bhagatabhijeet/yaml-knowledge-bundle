@@ -1,0 +1,18 @@
+# Sample config
+
+app:
+  name: sample-app
+  version: "0.1.0"
+
+server:
+  host: localhost
+  port: 8080
+  features:
+    - logging
+    - metrics
+
+database:
+  host: db.example.com
+  port: 5432
+  name: sampledb
+  user: sample_user
